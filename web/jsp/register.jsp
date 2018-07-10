@@ -39,7 +39,6 @@
     </style>
 </head>
 <body>
-
 <%@ include file="/jsp/header.jsp" %>
 <div class="container" style="width:100%;
         background:url('${pageContext.request.contextPath}/img/regist_bg.jpg');">
@@ -47,32 +46,39 @@
         <div class="col-md-2"></div>
         <div class="col-md-8"
              style="background:#fff;padding:40px 80px;margin:30px;border:7px solid #ccc;">
-            <font>Member Register</font>USER REGISTER
-            <form class="form-horizontal" style="margin-top:5px;" method="post"
+
+            <span>Member Register</span>USER REGISTER
+
+            <span class="form-horizontal" style="margin-top:5px;" method="post"
                   action="${pageContext.request.contextPath}/UserServlet">
+
                 <div class="form-group">
-                    <label for="username" class="col-sm-2 control-label">用户名</label>
+                    <label for="username" class="col-sm-2 control-label">Username</label>
                     <div class="col-sm-6">
-                        <input type="text" class="form-control" id="username" placeholder="请输入用户名"
+                        <input type="text" class="form-control" id="username"
+                               placeholder="Not less than 8 characters"
                                name="username">
                         <input type="hidden" name="method" value="userRegist">
                     </div>
                     <span id="username_span"></span>
                 </div>
+
                 <div class="form-group">
                     <label for="inputPassword3" class="col-sm-2 control-label">密码</label>
                     <div class="col-sm-6">
                         <input type="password" class="form-control" id="inputPassword3"
-                               placeholder="请输入密码" name="password">
+                               placeholder="Not less than 8 characters" name="password">
                     </div>
                 </div>
+
                 <div class="form-group">
                     <label for="confirmpwd" class="col-sm-2 control-label">确认密码</label>
                     <div class="col-sm-6">
                         <input type="password" class="form-control" id="confirmpwd"
-                               placeholder="请输入确认密码">
+                               placeholder="Must be same">
                     </div>
                 </div>
+
                 <div class="form-group">
                     <label for="inputEmail3" class="col-sm-2 control-label">Email</label>
                     <div class="col-sm-6">
@@ -80,15 +86,18 @@
                                placeholder="Email" name="email">
                     </div>
                 </div>
+
                 <div class="form-group">
-                    <label for="usercaption" class="col-sm-2 control-label">姓名</label>
+                    <label for="usercaption" class="col-sm-2 control-label">Name</label>
                     <div class="col-sm-6">
-                        <input type="text" class="form-control" id="usercaption" placeholder="请输入姓名"
+                        <input type="text" class="form-control" id="usercaption"
+                               placeholder="Real Name"
                                name="name">
                     </div>
                 </div>
+
                 <div class="form-group opt">
-                    <label for="inlineRadio1" class="col-sm-2 control-label">性别</label>
+                    <label for="inlineRadio1" class="col-sm-2 control-label">Gender</label>
                     <div class="col-sm-6">
                         <label class="radio-inline">
                             <input type="radio" name="sex" id="inlineRadio1" value="男"
@@ -99,8 +108,9 @@
                         </label>
                     </div>
                 </div>
+
                 <div class="form-group">
-                    <label for="date" class="col-sm-2 control-label">出生日期</label>
+                    <label for="date" class="col-sm-2 control-label">Birthday</label>
                     <div class="col-sm-6">
                         <input type="date" class="form-control" name="birthday">
                     </div>
@@ -133,11 +143,9 @@
                                        height:35px;width:100px;color:white;">
                     </div>
                 </div>
-            </form>
+            </span>
         </div>
-
         <div class="col-md-2"></div>
-
     </div>
 </div>
 
@@ -167,7 +175,7 @@
 </body>
 <script>
     $(function () {
-        //页面加载完毕为id为username文本框绑定失去焦点事件
+        // 页面加载完毕为id为username文本框绑定失去焦点事件
         $("#username").blur(function () {
             //获取到用户输入的信息
             var val = $(this).val();
@@ -187,7 +195,6 @@
                         $("#username_span").html("用户可以注册");
                         $("#username_span").css("color", "green");
                     }
-
                 });
             }
         });
